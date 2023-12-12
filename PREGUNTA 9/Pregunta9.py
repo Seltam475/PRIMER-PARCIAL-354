@@ -1,12 +1,14 @@
+#Con PYTHON sin librerías construya los índices de al menos dos ciclos para un Split de Train 80 y test de 20, apliquelo en el dataset iris.
+
 from sklearn.datasets import load_iris
 import random
 
-# Cargar el conjunto de datos iris
+#Cargar el conjunto de datos iris
 iris = load_iris()
 X = iris.data
 y = iris.target
 
-# Definir la proporción de división entre entrenamiento y prueba (80% entrenamiento, 20% prueba)
+#Definir la proporción de división entre entrenamiento y prueba
 split_ratio = 0.8
 split_index = int(len(X) * split_ratio)
 
@@ -16,9 +18,12 @@ y_train = y[:split_index]
 X_test = X[split_index:]
 y_test = y[split_index:]
 
-# Implementar un modelo simple sin usar bibliotecas externas
+#Implementar un modelo simple sin usar bibliotecas externas
 def simple_classifier(features):
-    # Supongamos que queremos predecir la clase 0 si la primera característica es menor que 5, de lo contrario, clase 1
+    #Aqui se quiere lograr clasificar las caracteristicas
+    #si es menor a 5, entonces cera clase 0,
+    #y si es mayor o igual sera clase 1
+    
     if features[0] < 5:
         return 0
     else:
