@@ -1,3 +1,9 @@
+#1. Seleccione un dataset de su interés (de cualquier repositorio, que contenga 
+#datos tabulares mínimo de 1500 filas y al menos 10 columnas). Realice el cálculo 
+#de la media, moda, cuartiles de datos y de percentiles por columna; explique qué 
+#significa en cada caso graficando los resultados (sin numpy y pandas).
+
+
 from sklearn.datasets import fetch_california_housing
 housing = fetch_california_housing()
 data = housing.data
@@ -29,10 +35,7 @@ def cal_cuartiles(columna):
     q3 = col_ordenada[3 * n // 4]
     return q1, q2, q3
 
-#1. Seleccione un dataset de su interés (de cualquier repositorio, que contenga 
-#datos tabulares mínimo de 1500 filas y al menos 10 columnas). Realice el cálculo 
-#de la media, moda, cuartiles de datos y de percentiles por columna; explique qué 
-#significa en cada caso graficando los resultados (sin numpy y pandas).
+
 
 
 
