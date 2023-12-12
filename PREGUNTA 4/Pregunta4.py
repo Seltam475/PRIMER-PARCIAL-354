@@ -22,20 +22,26 @@ feature_names = [
     "Longitud"
 ]
 
-# Convertir el conjunto de datos en un DataFrame de pandas
+# Converción del conjunto de datos en un dataframe de pandas
+
 df = pd.DataFrame(data=X, columns=feature_names)
 df['Precio_Mediano'] = y  # Agregar la columna de target al DataFrame
 
-# Etiquetado simple: Convierte la variable target en categorías
+# etiquetado simple 
+# convierte la variable target en categorías
+
 etiquetas_simple = ['Bajo' if valor <= 2 else 'Alto' for valor in df['Precio_Mediano']]
 
-# Etiquetado binario: Convierte la variable target en 0 o 1
+# etiquetado binario
+#onvierte la variable target en 0 o 1
+
 umbral_binario = 2.5  # Puedes ajustar este umbral según tus necesidades
 etiquetas_binarias = [1 if valor > umbral_binario else 0 for valor in df['Precio_Mediano']]
 
-# Agregar las etiquetas al DataFrame
+#agregar las etiquetas al dataframe
+
 df['Etiquetas_Simple'] = etiquetas_simple
 df['Etiquetas_Binarias'] = etiquetas_binarias
 
-# Mostrar el DataFrame con las nuevas etiquetas
+# Mostrar el datafrme con las nuevas etiquetas
 print(df.head())
